@@ -14,10 +14,10 @@ const Work = () => (
 
 
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-center sm:text-left">
-          What I've Done
+          What I Do
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-4 sm:gap-6 w-full items-center">
-            <div className="grid grid-cols-2 gap-4 justify-center sm:justify-start items-center w-[375px] h-[375px]">
+            {/* <div className="grid grid-cols-2 gap-4 justify-center sm:justify-start items-center w-[375px] h-[375px]">
                 <Image
                     src="/att.png"
                     alt="AT&T Logo"
@@ -54,9 +54,55 @@ const Work = () => (
                     height={80}
                     className="object-contain h-20 w-20"
                 />
+            </div> */}
+
+            <div className="grid grid-cols-2 gap-4 justify-center sm:justify-start items-center w-[375px] h-[375px]">
+                <Image
+                    src="/att.png"
+                    alt="AT&T Logo"
+                    width={100}
+                    height={100}
+                    className="object-contain h-24 w-24"
+                    priority
+                />
+                <Image
+                    src="/amdocs-.png"
+                    alt="Amdocs Logo"
+                    width={100}
+                    height={100}
+                    className="object-contain h-24 w-24"
+                />
+                <Image
+                    src="/southwest.png"
+                    alt="Southwest Logo"
+                    width={120}
+                    height={120}
+                    className="object-contain h-28 w-28"
+                />
+                <Image
+                    src="/leafhouse.png"
+                    alt="Leafhouse Logo"
+                    width={120}
+                    height={120}
+                    className="object-contain h-28 w-28"
+                />
+                <Image
+                    src="/c1.png"
+                    alt="Capital One Logo"
+                    width={100}
+                    height={100}
+                    className="object-contain h-24 w-24"
+                />
+                <Image
+                    src="/aspire.svg"
+                    alt="AspireHR Logo"
+                    width={100}
+                    height={100}
+                    className="object-contain h-24 w-24"
+                />
             </div>
             <h3 className="text-lg sm:text-xl font-medium tracking-tight text-center sm:text-left max-w-xl leading-relaxed">
-                Over the past decade, I’ve built and led frontend and fullstack solutions for a wide range of organizations—from major corporations like Capital One, Southwest Airlines, and AT&T, to agile teams at Stellar Elements and fintech startups like LeafHouse Financial. My work has spanned designing modern UI systems, developing scalable component libraries, optimizing legacy codebases, and collaborating across disciplines to ship responsive, user-focused applications. Whether launching internal platforms for auto loans or revamping customer-facing experiences, I’ve consistently delivered clean, performant code that bridges the gap between design and development.
+                Over the past decade, I’ve built and led frontend and fullstack solutions for a wide range of organizations—from major corporations like Capital One, Southwest Airlines, and AT&T, to agile teams at Amdocs Studios and fintech startups like LeafHouse Financial. My work has spanned designing modern UI systems, developing scalable component libraries, optimizing legacy codebases, and collaborating across disciplines to ship responsive, user-focused applications. Whether launching internal platforms for auto loans or revamping customer-facing experiences, I’ve consistently delivered clean, performant code that bridges the gap between design and development.
             </h3>
         </div>
         <div className="flex gap-4 items-center flex-col sm:flex-row">

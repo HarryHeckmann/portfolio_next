@@ -12,10 +12,13 @@ const About = () => (
           Who I Am
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-4 sm:gap-6 w-full items-center">
+
+            {/* <div className="relative aspect-[500/300]"> <Image alt='Harry and his son' src="/harry_jude.jpg" layout="fill" className="object-cover" /> </div> */}
+
             <div className="grid grid-cols-1 gap-4 justify-center sm:justify-start items-center w-[375px] h-[375px]">
                 <Image
                     aria-hidden
-                    src="/harry_jude.jpg"
+                    src="/heckmann-23.jpg"
                     alt="Harry and his son"
                     width={2007}
                     height={2432}
@@ -23,7 +26,7 @@ const About = () => (
                 />
             </div>
             <h3 className="text-lg sm:text-xl font-medium tracking-tight text-center sm:text-left max-w-xl leading-relaxed">
-                `Former music educator turned developer based in the DFW area. After realizing the classroom wasn't quite the right stage, I transitioned into tech—starting in support, moving through project management, and eventually finding my home in web development. Over the past 10 years, I've built a career around creating intuitive, high-performing digital experiences, collaborating with cross-functional teams, and mentoring developers along the way. I'm passionate about the intersection of design and engineering—the part where creative vision meets clean, scalable code. Let's build something great together.`
+                Former music educator turned developer based in the DFW area. After realizing the classroom wasn't quite the right stage, I transitioned into tech—starting in support, moving through project management, and eventually finding my home in web development. Over the past 10 years, I've built a career around creating intuitive, high-performing digital experiences, collaborating with cross-functional teams, and mentoring developers along the way. I'm passionate about the intersection of design and engineering—the part where creative vision meets clean, scalable code. Let's build something great together.
             </h3>
         </div>
         <div className="flex gap-4 items-center flex-col sm:flex-row">
