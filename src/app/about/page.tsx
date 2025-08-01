@@ -23,7 +23,7 @@ const About = () => (
                 />
             </div>
             <h3 className="text-lg sm:text-xl font-medium tracking-tight text-center sm:text-left max-w-xl leading-relaxed">
-                Former music educator turned developer based in the DFW area. After realizing the classroom wasn't quite the right stage, I transitioned into tech—starting in support, moving through project management, and eventually finding my home in web development. Over the past 10 years, I've built a career around creating intuitive, high-performing digital experiences, collaborating with cross-functional teams, and mentoring developers along the way. I'm passionate about the intersection of design and engineering—the part where creative vision meets clean, scalable code. Let's build something great together.
+                `Former music educator turned developer based in the DFW area. After realizing the classroom wasn't quite the right stage, I transitioned into tech—starting in support, moving through project management, and eventually finding my home in web development. Over the past 10 years, I've built a career around creating intuitive, high-performing digital experiences, collaborating with cross-functional teams, and mentoring developers along the way. I'm passionate about the intersection of design and engineering—the part where creative vision meets clean, scalable code. Let's build something great together.`
             </h3>
         </div>
         <div className="flex gap-4 items-center flex-col sm:flex-row">
