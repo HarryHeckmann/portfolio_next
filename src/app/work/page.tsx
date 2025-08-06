@@ -14,7 +14,7 @@ const Work = () => (
 
 
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-center sm:text-left">
-          What I Do
+          Who I've worked with
         </h1>
         <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-4 sm:gap-6 w-full items-center">
             {/* <div className="grid grid-cols-2 gap-4 justify-center sm:justify-start items-center w-[375px] h-[375px]">
@@ -102,11 +102,35 @@ const Work = () => (
                 />
             </div>
             <h3 className="text-lg sm:text-xl font-medium tracking-tight text-center sm:text-left max-w-xl leading-relaxed">
-                Over the past decade, I’ve built and led frontend and fullstack solutions for a wide range of organizations—from major corporations like Capital One, Southwest Airlines, and AT&T, to agile teams at Amdocs Studios and fintech startups like LeafHouse Financial. My work has spanned designing modern UI systems, developing scalable component libraries, optimizing legacy codebases, and collaborating across disciplines to ship responsive, user-focused applications. Whether launching internal platforms for auto loans or revamping customer-facing experiences, I’ve consistently delivered clean, performant code that bridges the gap between design and development.
+                Over the past decade, I’ve built and led frontend and fullstack solutions for a wide range of organizations—from major corporations like Capital One, Southwest Airlines, and AT&T, to agile teams at Amdocs Studios and fintech startups like LeafHouse Financial. 
             </h3>
         </div>
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
+        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-center sm:text-left">
+          What I Do
+        </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-[auto_1fr] gap-4 sm:gap-6 w-full items-center">
+            <div className="grid grid-cols-2 gap-4 justify-center sm:justify-start items-center w-[375px] h-[375px]">
+                <i className="devicon-nextjs-original-wordmark"></i>
+                <i className="devicon-react-original-wordmark"></i>
+                <i className="devicon-amazonwebservices-plain-wordmark"></i>
+                <i className="devicon-typescript-plain"></i>
+                <i className="devicon-javascript-plain"></i>
+                <i className="devicon-sass-original"></i>
+                <i className="devicon-angular-plain-wordmark"></i>
+                <i className="devicon-nodejs-plain-wordmark"></i>
+                <i className="devicon-git-plain-wordmark"></i>
+                <i className="devicon-html5-plain-wordmark"></i>
+                <i className="devicon-css3-plain-wordmark"></i>
+              </div>
 
+            {/* <div className="grid grid-cols-2 gap-4 justify-center sm:justify-start items-center w-[375px] h-[375px]"> */}
+
+                <h3 className="text-lg sm:text-xl font-medium tracking-tight text-center sm:text-left max-w-xl leading-relaxed">
+                    My work has spanned designing modern UI systems, developing scalable component libraries, optimizing legacy codebases, and collaborating across disciplines to ship responsive, user-focused applications. Whether launching internal platforms for auto loans or revamping customer-facing experiences, I’ve consistently delivered clean, performant code that bridges the gap between design and development.
+                </h3>
+            {/* </div> */}
+        </div>
+        <div className="flex gap-4 items-center flex-col sm:flex-row">
             <Link
               className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
               href="/"
