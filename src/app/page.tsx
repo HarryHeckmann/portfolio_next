@@ -24,7 +24,7 @@ export default function Home() {
     const handleScroll = () => {
       if (scrollingRef.current) return; // Ignore scroll events during animation
 
-      const sections = ["home", "about", "work"];
+      const sections = ["home", "about", "work", "projects"];
       const scrollPosition = window.scrollY + window.innerHeight / 2;
 
       for (const section of sections) {
@@ -98,6 +98,16 @@ export default function Home() {
                 Work
               </button>
               <button
+                onClick={() => scrollToSection("projects")}
+                className={`rounded-full transition-all duration-300 flex items-center justify-center font-medium text-sm h-8 px-4 ${
+                  activeSection === "projects"
+                    ? "bg-black text-white"
+                    : "hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a]"
+                }`}
+              >
+                Projects
+              </button>
+              <button
                 onClick={() => scrollToSection("contact")}
                 className={`rounded-full transition-all duration-300 flex items-center justify-center font-medium text-sm h-8 px-4 ${
                   activeSection === "contact"
@@ -135,6 +145,12 @@ export default function Home() {
                 className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
               >
                 Work
+              </button>
+              <button
+                onClick={() => scrollToSection("projects")}
+                className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
+              >
+                Projects
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
@@ -283,6 +299,100 @@ export default function Home() {
                 <i className="devicon-html5-plain-wordmark text-4xl" />
                 <i className="devicon-css3-plain-wordmark text-4xl" />
                 <i className="devicon-postgresql-plain-wordmark text-4xl" />
+              </div>
+            </div>
+          </main>
+        </section>
+
+        {/* Projects Section */}
+        <section
+          id="projects"
+          className="min-h-screen grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-4 sm:p-8 gap-4 sm:gap-8"
+        >
+          <main className="flex flex-col gap-6 row-start-2 items-center w-full max-w-5xl mx-auto py-8">
+            <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-center sm:text-left w-full">
+              Projects
+            </h1>
+            <div className="w-full bg-white/5 rounded-xl p-6 shadow-lg flex flex-col gap-6">
+              <div className="flex flex-col sm:flex-row sm:items-start gap-2 sm:gap-4">
+                <div className="flex-1">
+                  <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-left">
+                    Flux Barge-In
+                  </h2>
+                  <p className="text-base sm:text-lg font-medium text-left text-white/60 mt-1">
+                    A full-duplex voice agent built on Deepgram Flux STT + TTS
+                  </p>
+                </div>
+                <div className="flex gap-3 shrink-0">
+                  <a
+                    href="https://github.com/HarryHeckmann/heckmann-tts"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="rounded-full border border-solid border-white/[.145] transition-colors flex items-center gap-2 hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm h-10 px-4"
+                  >
+                    <i className="devicon-github-original text-lg" />
+                    View code
+                  </a>
+                </div>
+              </div>
+
+              <p className="text-lg sm:text-xl font-medium tracking-tight text-left leading-relaxed">
+                Most voice-agent demos stop at &ldquo;text-to-speech works.&rdquo; This one is built
+                around the part Deepgram Flux is actually designed to solve: what happens to the
+                conversation when a user talks over the agent mid-sentence. Interrupting the agent
+                doesn&apos;t just stop the audio — it reconciles the transcript so the model only ever
+                remembers the words the user actually heard, not the sentence it was cut off from
+                saying.
+              </p>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div className="bg-white/5 rounded-lg p-4">
+                  <h3 className="font-semibold text-left mb-1">Barge-in with a real playback clock</h3>
+                  <p className="text-sm text-white/70 text-left leading-relaxed">
+                    Flux TTS streams faster than real time, so interrupting is timed against
+                    rendered audio frames, not the send clock — otherwise history records words
+                    the user never heard.
+                  </p>
+                </div>
+                <div className="bg-white/5 rounded-lg p-4">
+                  <h3 className="font-semibold text-left mb-1">Live voice &amp; turn-taking control</h3>
+                  <p className="text-sm text-white/70 text-left leading-relaxed">
+                    36 Flux TTS voices, switched live mid-conversation, plus end-of-turn confidence
+                    and silence timeout tuned in real time via streaming Configure messages.
+                  </p>
+                </div>
+                <div className="bg-white/5 rounded-lg p-4">
+                  <h3 className="font-semibold text-left mb-1">Voice interview practice mode</h3>
+                  <p className="text-sm text-white/70 text-left leading-relaxed">
+                    Asks real questions out loud from a rubric-graded question bank and follows up
+                    on what your answer actually missed, entirely hands-free.
+                  </p>
+                </div>
+                <div className="bg-white/5 rounded-lg p-4">
+                  <h3 className="font-semibold text-left mb-1">Resilient by design</h3>
+                  <p className="text-sm text-white/70 text-left leading-relaxed">
+                    Session resumption survives a dropped socket, and the whole pipeline degrades
+                    gracefully to a scripted responder with no LLM key at all.
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex flex-wrap gap-2 justify-start">
+                {[
+                  "Deepgram Flux STT/TTS",
+                  "Claude",
+                  "WebSocket",
+                  "TypeScript",
+                  "React",
+                  "Node.js",
+                ].map((tag) => (
+                  <span
+                    key={tag}
+                    className="text-xs sm:text-sm font-medium tracking-tight rounded-full border border-white/15 px-3 py-1"
+                  >
+                    {tag}
+                  </span>
+                ))}
               </div>
             </div>
           </main>
