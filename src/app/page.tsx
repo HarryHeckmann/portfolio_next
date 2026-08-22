@@ -65,11 +65,14 @@ export default function Home() {
       <div className="relative z-10">
         {/* Fixed Navigation */}
         {activeSection !== "home" && (
-          <nav className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-black/90 border border-white/15 rounded-full px-4 py-2 shadow-lg">
-            <div className="flex gap-2">
+          <nav
+            className="fixed top-3 sm:top-4 left-1/2 transform -translate-x-1/2 z-50 bg-black/90 border border-white/15 rounded-full px-2 sm:px-4 py-1.5 sm:py-2 shadow-lg max-w-[96vw] overflow-x-auto [&::-webkit-scrollbar]:hidden"
+            style={{ scrollbarWidth: "none" }}
+          >
+            <div className="flex gap-0.5 sm:gap-2 w-max">
               <button
                 onClick={() => scrollToSection("home")}
-                className={`rounded-full transition-all duration-300 flex items-center justify-center font-medium text-sm h-8 px-4 ${
+                className={`shrink-0 rounded-full transition-all duration-300 flex items-center justify-center font-medium text-xs sm:text-sm h-7 sm:h-8 px-2.5 sm:px-4 ${
                   activeSection === "home"
                     ? "bg-black text-white"
                     : "hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a]"
@@ -79,7 +82,7 @@ export default function Home() {
               </button>
               <button
                 onClick={() => scrollToSection("about")}
-                className={`rounded-full transition-all duration-300 flex items-center justify-center font-medium text-sm h-8 px-4 ${
+                className={`shrink-0 rounded-full transition-all duration-300 flex items-center justify-center font-medium text-xs sm:text-sm h-7 sm:h-8 px-2.5 sm:px-4 ${
                   activeSection === "about"
                     ? "bg-black text-white"
                     : "hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a]"
@@ -89,7 +92,7 @@ export default function Home() {
               </button>
               <button
                 onClick={() => scrollToSection("work")}
-                className={`rounded-full transition-all duration-300 flex items-center justify-center font-medium text-sm h-8 px-4 ${
+                className={`shrink-0 rounded-full transition-all duration-300 flex items-center justify-center font-medium text-xs sm:text-sm h-7 sm:h-8 px-2.5 sm:px-4 ${
                   activeSection === "work"
                     ? "bg-black text-white"
                     : "hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a]"
@@ -99,7 +102,7 @@ export default function Home() {
               </button>
               <button
                 onClick={() => scrollToSection("projects")}
-                className={`rounded-full transition-all duration-300 flex items-center justify-center font-medium text-sm h-8 px-4 ${
+                className={`shrink-0 rounded-full transition-all duration-300 flex items-center justify-center font-medium text-xs sm:text-sm h-7 sm:h-8 px-2.5 sm:px-4 ${
                   activeSection === "projects"
                     ? "bg-black text-white"
                     : "hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a]"
@@ -109,7 +112,7 @@ export default function Home() {
               </button>
               <button
                 onClick={() => scrollToSection("contact")}
-                className={`rounded-full transition-all duration-300 flex items-center justify-center font-medium text-sm h-8 px-4 ${
+                className={`shrink-0 rounded-full transition-all duration-300 flex items-center justify-center font-medium text-xs sm:text-sm h-7 sm:h-8 px-2.5 sm:px-4 ${
                   activeSection === "contact"
                     ? "bg-black text-white"
                     : "hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a]"
@@ -124,7 +127,7 @@ export default function Home() {
         {/* Home Section */}
         <section
           id="home"
-          className="h-screen grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-4 sm:p-8 gap-4 sm:gap-8"
+          className="min-h-screen scroll-mt-20 grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-4 sm:p-8 gap-4 sm:gap-8"
         >
           <main className="flex flex-col gap-4 sm:gap-6 row-start-2 items-center">
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-center w-full">
@@ -165,7 +168,7 @@ export default function Home() {
         {/* About Section */}
         <section
           id="about"
-          className="h-screen grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-4 sm:p-8"
+          className="min-h-screen scroll-mt-20 grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-4 sm:p-8 py-16 sm:py-8"
         >
           <main className="row-start-2 w-full max-w-5xl mx-auto">
             <div className="w-full bg-white/5 rounded-xl px-8 py-8 shadow-lg flex flex-col">
@@ -204,7 +207,7 @@ export default function Home() {
         {/* Work Section */}
         <section
           id="work"
-          className="h-screen grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-4 sm:p-8 gap-4 sm:gap-8"
+          className="min-h-screen scroll-mt-20 grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-4 sm:p-8 py-16 sm:py-8 gap-4 sm:gap-8"
         >
           <main className="flex flex-col gap-10 row-start-2 items-center w-full max-w-5xl mx-auto">
             {/* Who I've worked with */}
@@ -307,7 +310,7 @@ export default function Home() {
         {/* Projects Section */}
         <section
           id="projects"
-          className="min-h-screen grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-4 sm:p-8 gap-4 sm:gap-8"
+          className="min-h-screen scroll-mt-20 grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-4 sm:p-8 py-16 sm:py-8 gap-4 sm:gap-8"
         >
           <main className="flex flex-col gap-6 row-start-2 items-center w-full max-w-5xl mx-auto py-8">
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-center sm:text-left w-full">
@@ -401,7 +404,7 @@ export default function Home() {
         {/* Contact Section */}
         <section
           id="contact"
-          className="h-screen grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-4 sm:p-8 gap-4 sm:gap-8"
+          className="min-h-screen scroll-mt-20 grid grid-rows-[20px_1fr_20px] items-center justify-items-center p-4 sm:p-8 py-16 sm:py-8 gap-4 sm:gap-8"
         >
           <main className="flex flex-col row-start-2 items-center w-full max-w-2xl mx-auto">
             <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-center w-full mb-2">
