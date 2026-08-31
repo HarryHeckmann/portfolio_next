@@ -182,7 +182,7 @@ const Particles: React.FC<ParticlesProps> = ({
 
     const particles = new Mesh(gl, { mode: gl.POINTS, geometry, program });
 
-    let animationFrameId: number;
+    let animationFrameId = 0;
     let lastTime = performance.now();
     let elapsed = 0;
 
@@ -211,7 +211,14 @@ const Particles: React.FC<ParticlesProps> = ({
       renderer.render({ scene: particles, camera });
     };
 
-    animationFrameId = requestAnimationFrame(update);
+    const prefersReducedMotion = window.matchMedia(
+      "(prefers-reduced-motion: reduce)"
+    ).matches;
+    if (prefersReducedMotion) {
+      renderer.render({ scene: particles, camera });
+    } else {
+      animationFrameId = requestAnimationFrame(update);
+    }
 
     return () => {
       window.removeEventListener("resize", resize);
