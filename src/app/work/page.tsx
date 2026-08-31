@@ -1,6 +1,12 @@
+import type { Metadata } from 'next';
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+
+export const metadata: Metadata = {
+  title: "Work — Harry Heckmann",
+  description: "Companies and technologies Harry Heckmann has worked with.",
+};
 
 const Work = () => (
 
@@ -101,9 +107,9 @@ const Work = () => (
                     className="object-contain h-24 w-24"
                 />
             </div>
-            <h3 className="text-lg sm:text-xl font-medium tracking-tight text-center sm:text-left max-w-xl leading-relaxed">
-                Over the past decade, I’ve built and led frontend and fullstack solutions for a wide range of organizations—from major corporations like Capital One, Southwest Airlines, and AT&T, to agile teams at Amdocs Studios and fintech startups like LeafHouse Financial. 
-            </h3>
+            <p className="text-lg sm:text-xl font-medium tracking-tight text-center sm:text-left max-w-xl leading-relaxed">
+                Over the past decade, I’ve built and led frontend and fullstack solutions for a wide range of organizations—from major corporations like Capital One, Southwest Airlines, and AT&T, to agile teams at Amdocs Studios and fintech startups like LeafHouse Financial.
+            </p>
         </div>
         <h1 className="text-4xl sm:text-5xl font-bold tracking-tight text-center sm:text-left">
           What I Do
@@ -125,9 +131,9 @@ const Work = () => (
 
             {/* <div className="grid grid-cols-2 gap-4 justify-center sm:justify-start items-center w-[375px] h-[375px]"> */}
 
-                <h3 className="text-lg sm:text-xl font-medium tracking-tight text-center sm:text-left max-w-xl leading-relaxed">
+                <p className="text-lg sm:text-xl font-medium tracking-tight text-center sm:text-left max-w-xl leading-relaxed">
                     My work has spanned designing modern UI systems, developing scalable component libraries, optimizing legacy codebases, and collaborating across disciplines to ship responsive, user-focused applications. Whether launching internal platforms for auto loans or revamping customer-facing experiences, I’ve consistently delivered clean, performant code that bridges the gap between design and development.
-                </h3>
+                </p>
             {/* </div> */}
         </div>
         <div className="flex gap-4 items-center flex-col sm:flex-row">
