@@ -14,10 +14,26 @@ const navLinks = [
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home");
   const scrollingRef = useRef(false);
+  const suppressUntilRef = useRef(0);
+
+  // Ignores scroll-spy recomputation for a bit. Used both for our own scrollIntoView
+  // animation and for the browser's native focus-follows-tab scrolling, which otherwise
+  // flips activeSection to "home" (and unmounts the nav) the instant Tab/Shift+Tab focuses
+  // an off-screen hero link, making the nav unreachable mid keyboard-navigation.
+  const suppressScrollSpy = (durationMs = 600) => {
+    scrollingRef.current = true;
+    const until = Date.now() + durationMs;
+    suppressUntilRef.current = until;
+    window.setTimeout(() => {
+      if (suppressUntilRef.current === until) {
+        scrollingRef.current = false;
+      }
+    }, durationMs);
+  };
 
   const scrollToSection = (sectionId: string) => {
     setActiveSection(sectionId); // Instantly highlight the nav
-    scrollingRef.current = true;
+    suppressScrollSpy();
     const element = document.getElementById(sectionId);
     const prefersReducedMotion = window.matchMedia(
       "(prefers-reduced-motion: reduce)"
@@ -30,10 +46,6 @@ export default function Home() {
     // scrolled to, instead of being stranded on the (possibly now off-screen) control.
     const heading = document.getElementById(`${sectionId}-heading`);
     heading?.focus({ preventScroll: true });
-
-    setTimeout(() => {
-      scrollingRef.current = false;
-    }, 600); // 600ms matches most smooth scroll durations
   };
 
   useEffect(() => {
@@ -58,8 +70,14 @@ export default function Home() {
       }
     };
 
+    const handleFocusIn = () => suppressScrollSpy();
+
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    document.addEventListener("focusin", handleFocusIn);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      document.removeEventListener("focusin", handleFocusIn);
+    };
   }, []);
 
   const heroButtonClass =
